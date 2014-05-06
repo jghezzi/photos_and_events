@@ -1,0 +1,13 @@
+- @events.each do |e|
+	= e.name
+	= e.location
+	= e.description
+	- @photos.each do |p|
+		%br
+		-if p.event_id == e.id
+			= image_tag p.pic.url, width: 200, height: 200
+			%br
+			= p.description
+
+			= button_to "Tag This Photo", photo_path(p), method: :get
+	%br

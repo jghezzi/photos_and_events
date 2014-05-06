@@ -1,0 +1,5 @@
+= form_for @new_comment do |p|
+	= image_tag @photo.pic.url, width: 200, height: 200
+	= p.label "Tag this photo"
+	= p.text_field :commentable
+	= p.submit "TAG"

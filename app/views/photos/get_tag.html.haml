@@ -1,0 +1,7 @@
+= form_for @photo do |p|
+	= image_tag @photo.pic.url, width: 200, height: 200
+	
+	= p.fields_for :tags do |t|
+		= t.label "Tag this photo"
+		= t.text_field :description
+	= p.submit "Tag"

@@ -1,0 +1,18 @@
+= form_for @new_event do |e|
+	Add An Event:
+	= e.label "Event Name:"
+	= e.text_field :name
+	= e.label "Location"
+	= e.text_field :location
+	= e.label "Description"
+	= e.text_field :description
+
+	= e.fields_for :photos do |p|
+		%br
+		Add a picture:
+		= p.file_field :pic
+		Picture Description:
+		= p.text_field :description
+		= p.hidden_field :event_id, value: @new_event.id
+
+	= e.submit "Add Item"
