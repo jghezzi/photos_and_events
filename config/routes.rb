@@ -15,8 +15,7 @@ Rails.application.routes.draw do
   
   resources :photos do
     member do
-      get :get_tag
-      put :add_tag
+      get :show_and_tag
     end
   end
 

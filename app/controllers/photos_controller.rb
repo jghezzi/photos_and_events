@@ -14,8 +14,13 @@ class PhotosController < ApplicationController
 	end
 
 	def get_tag
-		@tag = Tag.new
+		@new_tag = Tag.new
 		@photo = Photo.find(params[:id])
+	end
+
+	def show_and_tag
+		@photo = Photo.find(params[:id])
+		@new_tag = @photo.tags.build
 	end
 
 	private

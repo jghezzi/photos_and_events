@@ -1,0 +1,11 @@
+= form_for @new_tag do |p|
+	= image_tag @photo.pic.url, width: 200, height: 200
+	= p.label "Tag this photo"
+	= p.text_field :name
+	= p.hidden_field :photo_id, value: @photo.id
+	= p.submit "TAG"
+	%br
+	%br
+	Tagged as:
+	- @photo.tags.uniq.each do |tag|
+		= tag.name
