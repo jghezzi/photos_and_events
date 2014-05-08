@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   resources :events do
-    get :new_photo_for_event
+    member do
+      get :new_photo_for_event
+    end
   end
 
   resources :photos do

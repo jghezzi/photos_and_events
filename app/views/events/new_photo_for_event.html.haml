@@ -1,12 +1,10 @@
-= form_for @event do |e|
+= form_for @photo do |f| 
 	Event:
 	= @event.name
-	= e.fields_for :photo do |p|
-		%br
-		Add a picture:
-		= p.file_field :pic
-		Picture Description:
-		= p.text_field :description
-		= p.hidden_field :event_id, value: @event.id
+	Add a picture:
+	= f.file_field :pic
+	Picture Description:
+	= f.text_field :description
+	= f.hidden_field :event_id, value: @event.id
 
-	= e.submit "Add Photo"
+	= f.submit "Add Photo"

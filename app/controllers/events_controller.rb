@@ -21,8 +21,8 @@ class EventsController < ApplicationController
 	end
 
 	def new_photo_for_event			
-		@event = Event.find(params[:event_id])
-		@event.photos.build
+		@event = Event.find(params[:id])
+		@photo = @event.photos.build
 	end
 
 	def update

@@ -5,7 +5,7 @@
 	.col-sm-3.col-xs-6
 		.panel.panel-default
 			.panel-thumbnail
-				= button_to "Add a photo to this event", event_new_photo_for_event_path(event), method: :get
+				= link_to "Add a photo to this event", new_photo_for_event_event_path(event), method: :get
 				Event:
 				= event.name
 				%br
