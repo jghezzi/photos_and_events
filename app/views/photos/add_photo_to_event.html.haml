@@ -1,0 +1,8 @@
+= fields_for @photo do |p| url: save_photo_to_event_photo, method: :post
+	%br
+	Add a picture:
+	= p.file_field :pic
+	Picture Description:
+	= p.text_field :description
+
+	= p.submit "Add Photo"

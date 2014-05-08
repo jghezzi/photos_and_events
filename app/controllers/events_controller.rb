@@ -19,10 +19,24 @@ class EventsController < ApplicationController
 		end
 	end
 
+	def new_photo_for_event			
+		@event = Event.find(params[:event_id])
+		@event.photos.build
+	end
+
+	def update
+		@event = Event.find(params[:id])
+		if @event.update_attributes(event_params)
+			redirect_to events_path
+		else
+			render :back
+		end
+	end
+
 	private
 
 	def event_params
-		params.require(:event).permit(:name, :description, :location, photos_attributes: [:pic, :event_id, :description], tags_attributes: [:name, :description])
+		params.require(:event).permit(:name, :description, :location, photos_attributes: [:pic, :event_id, :description], tags_attributes: [:name, :description], photo_attributes: [:pic, :event_id, :description], tags_attributes: [:name, :description])
 	end
 
 end

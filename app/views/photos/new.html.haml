@@ -1,0 +1,6 @@
+= form_for @new_photo do |p|
+	Add a picture:
+	= p.file_field :pic
+	Picture Description:
+	= p.text_field :description
+	= p.hidden_field :event_id, value: params[:id]
