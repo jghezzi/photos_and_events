@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
 
+
 	def index
 		@events = Event.all
 		@photos = Photo.all
@@ -36,7 +37,7 @@ class EventsController < ApplicationController
 	private
 
 	def event_params
-		params.require(:event).permit(:name, :description, :location, photos_attributes: [:pic, :event_id, :description], tags_attributes: [:name, :description], photo_attributes: [:pic, :event_id, :description], tags_attributes: [:name, :description])
+		params.require(:event).permit(:name, :description, :location, photos_attributes: [:pic, :event_id, :description], tags_attributes: [:name, :description])
 	end
 
 end
