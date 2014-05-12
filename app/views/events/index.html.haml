@@ -1,11 +1,12 @@
 .jumbotron
 	%h2 Events
+	= button_to "Add an event", new_event_path, method: :get
 
 - @events.each do |event|
 	.col-sm-3.col-xs-6
 		.panel.panel-default
 			.panel-thumbnail
-				= link_to "Add a photo to this event", new_photo_for_event_event_path(event), method: :get
+				= button_to "Add a photo to this event", new_photo_for_event_event_path(event), method: :get
 				Event:
 				= event.name
 				%br

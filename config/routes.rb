@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'events#index'
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -20,8 +19,6 @@ Rails.application.routes.draw do
   resources :photos do
     member do
       get :show_and_tag
-      get :add_photo_to_event
-      post :save_photo_to_event
     end
   end
 
