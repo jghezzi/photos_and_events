@@ -1,6 +1,5 @@
 FactoryGirl.define do
 	factory :event do |f|
-		f.id 1
 		f.name "Good Time!"
 		f.description "Out and about"
 		f.location "New Jersey"

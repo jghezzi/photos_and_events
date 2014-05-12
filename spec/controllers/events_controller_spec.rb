@@ -36,12 +36,16 @@ describe EventsController do
 		end
 	end
 
-	# describe "PUT #update" do
-	# 	it "should update attributes" do
- #    	@event.should_receive(:update_attributes)
- #    	put :update
- #  	end
- #  end
+	describe "PUT #update" do
+		it "should update attributes" do
+    	event = FactoryGirl.create(:event)
+    	put :update, id: event.id, event:{name: "new name"}
+    	assigns(:event).name.should eq("new name")
+  	end
+  end
+
+end
+
 
 	# describe "PUT #update" do
 	# 	it 'updates an existing event' do
@@ -61,7 +65,4 @@ describe EventsController do
 	# 		get :new_photo_for_event
 	# 		assigns(:photo).count.should eq(1)
 	# 	end
-	# end
 
-
-end
